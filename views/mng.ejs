@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +12,24 @@
         }
     </style>
 </head>
+
 <body>
     <h1>后台管理模板</h1>
-    <form action="">
+    <form action="http://localhost:3000/mng" method="POST">
         <div>
             <p>修改导航为</p>
-            <select name="" id="">
-                <option value="">nav1</option>
+            <select name="selected" id="selected">
+                <% for(var i=0;i<nav.length;i++) { %>
+                    <option name="<%= nav[i].title %>" value="<%= nav[i].title %>"><%= nav[i].title %></option>
+                <% } %>
             </select>
-            <input type="text">
+            <input type="text" name="xiugaiwei" value="">
         </div>
         <div>
             <p>增加导航</p>
-            <input type="text">
+            <input type="text" name="add" value="">
         </div>
+        <button type="submit">提交</button>
     </form>
 </body>
 </html>

@@ -2,7 +2,7 @@
   'use strict';
 
   $(function() {
-    var $fullText = $('.admin-fullText');
+    const $fullText = $('.admin-fullText');
     $('#admin-fullscreen').on('click', function() {
       $.AMUI.fullscreen.toggle();
     });
